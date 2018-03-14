@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BakingApp</string>
+    <string name="no_network_error_message">Check your Internet connectivity and try again.</string>
+    <string name="recipe_poster">Recipe Final view</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="ingredient_steps">INGREDIENTS AND STEPS :</string>
+    <string name="network_call_error_message">Error in retrieving data from the server. Try again later.</string>
+    <string name="no_connection">No Connection</string>
+    <string name="online">Back Online</string>
+</resources>

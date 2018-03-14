@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dsekar.bakingapp.RecipeDetailActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredient_steps"
+            android:textStyle="bold"
+            android:theme="@style/AppIngredientTitle"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:layout_margin="8dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"/>
+        <include layout="@layout/recipe_detail"/>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
