@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BakingApp.iml" filepath="$PROJECT_DIR$/BakingApp.iml" />
+      <module fileurl="file://C:\GITHUB_BAKINGAPP\BakingApplication\BakingApp.iml" filepath="C:\GITHUB_BAKINGAPP\BakingApplication\BakingApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BakingApplication.iml" filepath="$PROJECT_DIR$/BakingApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\GITHUB_BAKINGAPP\BakingApplication\app\app.iml" filepath="C:\GITHUB_BAKINGAPP\BakingApplication\app\app.iml" />
     </modules>
   </component>
 </project>
