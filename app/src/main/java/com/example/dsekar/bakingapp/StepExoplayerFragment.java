@@ -71,6 +71,10 @@ public class StepExoplayerFragment extends android.support.v4.app.Fragment imple
     private onConnectivityChangeReceiver connectivityChangeReceiver;
     private IntentFilter intentFilter;
 
+    private boolean playWhenReady = true;
+
+    private static final String PLAY_WHEN_GET_READY = "play_when_ready";
+
     public StepExoplayerFragment() {
 
     }
@@ -83,6 +87,7 @@ public class StepExoplayerFragment extends android.support.v4.app.Fragment imple
         if (savedInstanceState != null) {
             position = savedInstanceState.getLong(SELECTED_POSITION, C.TIME_UNSET);
             mStep = savedInstanceState.getParcelable(SELECTED_STEP);
+            playWhenReady = savedInstanceState.getBoolean(PLAY_WHEN_GET_READY);
         } else {
             getIntentData();
         }
@@ -118,8 +123,7 @@ public class StepExoplayerFragment extends android.support.v4.app.Fragment imple
 
             mPlayerView.setPlayer(mPlayer);
 
-
-            mPlayer.setPlayWhenReady(true);
+            mPlayer.setPlayWhenReady(playWhenReady);
             DefaultExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
 
             DataSource.Factory mediaDataSourceFactory = new DefaultDataSourceFactory(getActivity(),
@@ -160,8 +164,14 @@ public class StepExoplayerFragment extends android.support.v4.app.Fragment imple
         super.onPause();
         if (mPlayer != null) {
             position = mPlayer.getCurrentPosition();
+            playWhenReady = false;
             releasePlayer();
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     private void getIntentData() {
@@ -184,6 +194,7 @@ public class StepExoplayerFragment extends android.support.v4.app.Fragment imple
         super.onSaveInstanceState(outState);
         outState.putLong(SELECTED_POSITION, position);
         outState.putParcelable(SELECTED_STEP, mStep);
+        outState.putBoolean(PLAY_WHEN_GET_READY, playWhenReady);
     }
 
     public void getStepData(Step step) {
