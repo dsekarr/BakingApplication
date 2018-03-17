@@ -164,7 +164,7 @@ public class StepExoplayerFragment extends android.support.v4.app.Fragment imple
         super.onPause();
         if (mPlayer != null) {
             position = mPlayer.getCurrentPosition();
-            playWhenReady = false;
+            playWhenReady = mPlayer.getPlayWhenReady();
             releasePlayer();
         }
     }
